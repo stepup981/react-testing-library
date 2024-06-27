@@ -31,20 +31,20 @@ describe("USERS TEST", () => {
     jest.clearAllMocks();
   });
 
-  test("renders learn react link", async () => {
-    axios.get.mockResolvedValue(response);
-    render(<Users />);
-    const users = await screen.findAllByTestId("user-item");
-    expect(users.length).toBe(3);
-    expect(axios.get).toHaveBeenCalledTimes(1);
-  });
-
-  // test("renders learn react link2", async () => {
+  // test("renders learn react link", async () => {
   //   axios.get.mockResolvedValue(response);
-  //   renderWithRouter(null, "/users");
+  //   render(<Users />);
   //   const users = await screen.findAllByTestId("user-item");
   //   expect(users.length).toBe(3);
-  //   userEvent.click(users[0]);
-  //   expect(screen.getByTestId("user-page")).toBeInTheDocument();
+  //   expect(axios.get).toHaveBeenCalledTimes(1);
   // });
+
+  test("renders learn react link2", async () => {
+    axios.get.mockResolvedValue(response);
+    renderWithRouter(null, "/users");
+    const users = await screen.findAllByTestId("user-item");
+    expect(users.length).toBe(3);
+    userEvent.click(users[0]);
+    expect(screen.getByTestId("users-page")).toBeInTheDocument();
+  });
 });
