@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-const Navbar = props => {
+const Navbar = (props) => {
   return (
     <div>
       <Link to="/" data-testid="main-link">
@@ -10,7 +10,10 @@ const Navbar = props => {
       <Link to="/about" data-testid="about-link">
         ABOUT
       </Link>
-      <Link to="/users" data-testid="users-link">Users</Link>
+      <Link to="/users" data-testid="users-link">
+        Users
+      </Link>
+      <Link to="users-test">USERS_TEST</Link>
     </div>
   );
 };
